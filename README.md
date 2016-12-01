@@ -115,25 +115,18 @@ charge_l_image_et_trace("training_set_perceptron/A1.png")
 1. **Traitement de l'image par le neurone**
 Le neurone prend l'image sous la forme d'un vecteur en entrée, le multiplie par ses poids et regarde le signe du résultat.
 L'image d'entrée est bicolore, formée de 50 pixels. On peut donc représenter l'image par des 0 et des 1 pour chacune des couleurs, on peut la transformer en un vecteur de taille 2500 contenant des 0 et des 1.
-Si on appelle $\left(x_{i}\right)_{[[1,2500]]}$ le vecteur d'exemple, $\left(w_{i}\right)_{[[1,2500]]}$ les poids du neurone, et $y$ le résultat du traitement, alors le traitement de l'image par le neurone peut s'écrire en équations:
-$$
-\begin{equation}
-y = signe( \sum_{i=1}^{2500} w_i x_i )
-\end{equation}
-$$
+Si on appelle xi le vecteur de l'exemple, wi les poids du neurone, et $y$ le résultat du traitement, alors le traitement de l'image par le neurone peut s'écrire en équations:
+<img src="eq1.png" width="200">
 1.  **Entrainement du neurone**
 On rappelle les étapes principales:
-- On commence par choisir des poids initiaux au hasard  
-- Pour chaque exemple de notre ensemble d'entrainement:
-    - on calcule le score prédit étant donné les poids actuels, le score qu'on aurait du trouver et l'erreur qui est la différence entre ces deux grandeurs
-    - On met à jour les poids:   
-    nouveaux poids = poids actuels + erreur * entrée, 
+    - On commence par choisir des poids initiaux au hasard (ou bien tous à 0, qu'est-ce qui vous parait le plus cohérent ?) 
+    - Pour chaque exemple de notre ensemble d'entrainement:
+        - on calcule le score prédit étant donné les poids actuels, le score qu'on aurait du trouver et l'erreur qui est la différence entre ces deux grandeurs
+        - On met à jour les poids: nouveaux poids = poids actuels + erreur * entrée, 
     - Et on recommence
 Soit en équations:
-Si les poids actuels sont $\left(w_i(t) \right)_{i\in [[0, 2500]]}$, les poids mis à jour $w_i(t+1)$, le score de l'exemple $k$ est $s_k$, la prédiction du neurone $y_k$ et l'exemple $k$ vectorisé est sous la forme  $x_{i,k}$, alors:
-$$
-w_i(t+1) = w_i(t) + (s_k - y_k)  x_{i,k}
-$$
+Si les poids actuels sont wi(t), les poids mis à jour wi(t+1), le score de l'exemple k est sk, la prédiction du neurone yk et l'exemple k vectorisé est sous la forme  xi,k, alors:
+<img src="eq2.png" width="200">
 Quand s'arreter ?
 Un critère peut etre de regarder quand le neurone cesse de progresser, c'est à dire que les erreurs qu'il fait cessent de diminuer.  
-1. Une fois le neurone entrainé, on le teste sur quelques images
+1. Une fois le neurone entrainé, on le **teste** sur quelques images

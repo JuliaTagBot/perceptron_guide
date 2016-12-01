@@ -111,7 +111,7 @@ charge_l_image_et_trace("training_set_perceptron/A1.png")
 
 ## Suite: liste des étapes pour programmer le perceptron:
 
-1. Constituer un **ensemble d'entrainement** qui contient une image et ce qu'elle représente. Dans notre exemple, ce serait tous les A avec le score +1 et tous les B avec le score -1  
+1. Constituer un **ensemble d'entrainement** qui contient des exemples et ce qui doit etre appris sur ces exemples. Dans le cas que je vous propose, ce serait tous les A avec le score +1 et tous les B avec le score -1. Encore une fois, n'hésitez pas à faire vos propres exemples.  
 1. **Traitement de l'image par le neurone**
 Le neurone prend l'image sous la forme d'un vecteur en entrée, le multiplie par ses poids et regarde le signe du résultat.
 L'image d'entrée est bicolore, formée de 50 pixels. On peut donc représenter l'image par des 0 et des 1 pour chacune des couleurs, on peut la transformer en un vecteur de taille 2500 contenant des 0 et des 1.
